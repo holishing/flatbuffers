@@ -1,7 +1,23 @@
-flatbuffers (1.10.0-1~) UNRELEASED; urgency=medium
+flatbuffers (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
 
+  [ Maximiliano Curia ]
   * Initial release. (Closes: #823037)
   * Do install the flatc binary
   * New upstream release (1.10.0).
+  * Bump debhelper build-dep and compat to 12
+  * Bump to Standards-Version 4.3.0
+  * Use the hardening=+all deb build option
+  * Add missing package sections
 
- -- Maximiliano Curia <maxy@debian.org>  Fri, 25 Jan 2019 15:59:05 -0300
+  [ Balint Reczey ]
+  * Add Salsa CI configuration
+  * debian/control: Fix typo libsdevel -> libdevel
+  * debian/control: Make unique short descriptions
+  * Override false positive source-contains-prebuilt-doxygen-documentation
+    Lintian warning
+  * Add packaging TODO
+  * Exclude prebuilt jars from original upstream tarball
+  * debian/watch: Support repacked source
+  * New import of upstream version 1.10.0 as 1.10.0+dfsg1 excluding the jars
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Sun, 03 Mar 2019 21:58:24 +0100
