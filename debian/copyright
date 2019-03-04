@@ -1,6 +1,8 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Flatbuffers
 Source: https://github.com/google/flatbuffers
+Files-Excluded: android/gradle/wrapper/gradle-wrapper.jar
+                samples/android/gradle/wrapper/gradle-wrapper.jar
 
 Files: *
 Copyright: 2014-2018, Google Inc
