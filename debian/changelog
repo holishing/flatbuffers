@@ -1,4 +1,4 @@
-flatbuffers (1.11.0+dfsg1-1~) UNRELEASED; urgency=medium
+flatbuffers (1.11.0+dfsg1-1) unstable; urgency=medium
 
   [ Maximiliano Curia ]
   * Initial release. (Closes: #823037)
@@ -9,6 +9,8 @@ flatbuffers (1.11.0+dfsg1-1~) UNRELEASED; urgency=medium
   * Add missing package sections
   * Add symbols to be managed with pkgkde symbolshelper
   * New upstream release (1.11.0).
+  * Update symbols files
+  * Release to unstable
 
   [ Balint Reczey ]
   * Add Salsa CI configuration
@@ -22,4 +24,4 @@ flatbuffers (1.11.0+dfsg1-1~) UNRELEASED; urgency=medium
   * New import of upstream version 1.10.0 as 1.10.0+dfsg1 excluding the jars
   * debian/gitlab-ci.yml: Disable reprotest until cmake is fixed
 
- -- Maximiliano Curia <maxy@debian.org>  Mon, 29 Jul 2019 23:46:40 -0300
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jul 2019 10:40:36 -0300
