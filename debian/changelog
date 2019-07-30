@@ -2,7 +2,6 @@ flatbuffers (1.11.0+dfsg1-1~) UNRELEASED; urgency=medium
 
   [ Maximiliano Curia ]
   * Initial release. (Closes: #823037)
-  * Do install the flatc binary
   * New upstream release (1.10.0).
   * Bump debhelper build-dep and compat to 12
   * Bump to Standards-Version 4.3.0
