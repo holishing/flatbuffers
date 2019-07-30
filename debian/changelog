@@ -1,4 +1,4 @@
-flatbuffers (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
+flatbuffers (1.11.0+dfsg1-1~) UNRELEASED; urgency=medium
 
   [ Maximiliano Curia ]
   * Initial release. (Closes: #823037)
@@ -8,6 +8,8 @@ flatbuffers (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
   * Bump to Standards-Version 4.3.0
   * Use the hardening=+all deb build option
   * Add missing package sections
+  * Add symbols to be managed with pkgkde symbolshelper
+  * New upstream release (1.11.0).
 
   [ Balint Reczey ]
   * Add Salsa CI configuration
@@ -19,5 +21,6 @@ flatbuffers (1.10.0+dfsg1-1) UNRELEASED; urgency=medium
   * Exclude prebuilt jars from original upstream tarball
   * debian/watch: Support repacked source
   * New import of upstream version 1.10.0 as 1.10.0+dfsg1 excluding the jars
+  * debian/gitlab-ci.yml: Disable reprotest until cmake is fixed
 
- -- Balint Reczey <rbalint@ubuntu.com>  Sun, 03 Mar 2019 21:58:24 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 29 Jul 2019 23:46:40 -0300
