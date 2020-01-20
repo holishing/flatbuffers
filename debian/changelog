@@ -1,4 +1,4 @@
-flatbuffers (1.11.0+dfsg1-1.1) unstable; urgency=medium
+flatbuffers (1.11.0+dfsg1-1.1~rbalint1) unstable; urgency=medium
 
   * Non-maintainer upload (Closes: #949329)
   * Update symbols from sid build logs and local build to fix FTBFS
