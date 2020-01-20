@@ -1,3 +1,10 @@
+flatbuffers (1.11.0+dfsg1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Fix odd version number that I uploaded with accidentally (I'm sorry)
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Mon, 20 Jan 2020 12:14:42 +0100
+
 flatbuffers (1.11.0+dfsg1-1.1~rbalint1) unstable; urgency=medium
 
   * Non-maintainer upload (Closes: #949329)
