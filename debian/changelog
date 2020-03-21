@@ -1,3 +1,11 @@
+flatbuffers (1.11.0+dfsg1-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Refresh symbols from unstable build logs.
+    This fixes FTBFS on mips64el.
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Sat, 21 Mar 2020 17:35:47 +0100
+
 flatbuffers (1.11.0+dfsg1-1.1) unstable; urgency=medium
 
   * Non-maintainer upload
