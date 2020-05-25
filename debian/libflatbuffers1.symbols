@@ -24,6 +24,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers11ParserStateD1Ev@Base 1.10.0+dfsg1
  _ZN11flatbuffers11ParserStateD2Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorINS_6OffsetIvEEEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
+ (optional=templinst)_ZN11flatbuffers11SymbolTableINS_10ServiceDefEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIaEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIdEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIfEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
@@ -102,7 +103,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers17FlatBufferBuilder10TrackFieldEtj@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder11PushElementIhEEjT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder11PushElementIjEEjT_@Base 1.10.0+dfsg1
- (subst)_ZN11flatbuffers17FlatBufferBuilder11StartVectorE{size_t}{size_t}@Base 1.10.0+dfsg1
+ (optional=templinst|subst)_ZN11flatbuffers17FlatBufferBuilder11StartVectorE{size_t}{size_t}@Base 1.10.0+dfsg1
  (subst)_ZN11flatbuffers17FlatBufferBuilder12CreateStringEPKc{size_t}@Base 1.10.0+dfsg1
  (subst)_ZN11flatbuffers17FlatBufferBuilder18CreateSharedStringEPKc{size_t}@Base 1.10.0+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder21CreateVectorOfStringsERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EE@Base 1.10.0+dfsg1
@@ -246,7 +247,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers9CopyTableERNS_17FlatBufferBuilderERKN10reflection6SchemaERKNS2_6ObjectERKNS_5TableEb@Base 1.10.0+dfsg1
  _ZN11flatbuffers9DirExistsEPKc@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers9GetFieldIIhEET_RKNS_5TableERKN10reflection5FieldE@Base 1.10.0+dfsg1
- (arch=!mips64el)_ZN11flatbuffers9GetFieldSERKNS_5TableERKN10reflection5FieldE@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!mips64el)_ZN11flatbuffers9GetFieldSERKNS_5TableERKN10reflection5FieldE@Base 1.11.0+dfsg1
  _ZN11flatbuffers9GetFieldTERKNS_5TableERKN10reflection5FieldE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers9GetFieldVINS_6OffsetINS_5TableEEEEEPNS_6VectorIT_EERKS2_RKN10reflection5FieldE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers9GetFieldVINS_6OffsetINS_6StringEEEEEPNS_6VectorIT_EERKNS_5TableERKN10reflection5FieldE@Base 1.10.0+dfsg1
@@ -270,19 +271,24 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZN11flexbuffers14AppendToStringINS_11TypedVectorEEEvRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEOT_b@Base 1.11.0+dfsg1
  (optional=templinst|arch=!amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers14AppendToStringINS_16FixedTypedVectorEEEvRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEOT_b@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flexbuffers14AppendToStringINS_6VectorEEEvRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEOT_b@Base 1.11.0+dfsg1
- (subst)_ZN11flexbuffers7Builder12CreateVectorE{size_t}{size_t}{size_t}bbPKNS0_5ValueE@Base 1.10.0+dfsg1
+ (optional=templinst|subst)_ZN11flexbuffers7Builder12CreateVectorE{size_t}{size_t}{size_t}bbPKNS0_5ValueE@Base 1.10.0+dfsg1
  _ZN11flexbuffers7Builder6FinishEv@Base 1.10.0+dfsg1
- (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection4Enum18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
+ (optional=templinst)_ZN11flexbuffers7Builder5AlignENS_8BitWidthE@Base 1.11.0+dfsg1
+ (optional=templinst)_ZN11flexbuffers7Builder6EndMapEm@Base 1.11.0+dfsg1
+ (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection4Enum18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
+ (optional=templinst)_ZN11flexbuffers7Builder8WriteAnyERKNS0_5ValueEh@Base 1.11.0+dfsg1
+ (optional=templinst)_ZN11flexbuffers7BuilderD1Ev@Base 1.11.0+dfsg1
+ (optional=templinst)_ZN11flexbuffers7BuilderD2Ev@Base 1.11.0+dfsg1
  _ZNK10reflection4Enum6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  _ZNK10reflection4Type6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
- (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection5Field18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection5Field18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
  _ZNK10reflection5Field6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
- (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection6Object18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection6Object18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
  _ZNK10reflection6Object6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  _ZNK10reflection6Schema6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
- (arch=ppc64)_ZNK10reflection7EnumVal6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
+ (optional=templinst|arch=ppc64)_ZNK10reflection7EnumVal6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection7RPCCall6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
- (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection7Service18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection7Service18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
  (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection7Service6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  (arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection8KeyValue18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
  _ZNK11flatbuffers10Definition19SerializeAttributesEPNS_17FlatBufferBuilderERKNS_6ParserE@Base 1.10.0+dfsg1
@@ -323,10 +329,10 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZNK11flatbuffers7EnumVal9SerializeEPNS_17FlatBufferBuilderERKNS_6ParserE@Base 1.10.0+dfsg1
  _ZNK11flatbuffers7RPCCall9SerializeEPNS_17FlatBufferBuilderERKNS_6ParserE@Base 1.10.0+dfsg1
  _ZNK11flatbuffers8FieldDef9SerializeEPNS_17FlatBufferBuilderEtRKNS_6ParserE@Base 1.10.0+dfsg1
- (subst)_ZNK11flatbuffers8Verifier20VerifyVectorOrStringEPKh{size_t}P{size_t}@Base 1.11.0+dfsg1
+ (optional=templinst|subst)_ZNK11flatbuffers8Verifier20VerifyVectorOrStringEPKh{size_t}P{size_t}@Base 1.11.0+dfsg1
  (subst)_ZNK11flatbuffers9Namespace21GetFullyQualifiedNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE{size_t}@Base 1.10.0+dfsg1
  _ZNK11flatbuffers9StructDef9SerializeEPNS_17FlatBufferBuilderERKNS_6ParserE@Base 1.10.0+dfsg1
- (arch=!amd64 !arm64 !ia64 !mips64el !ppc64el !riscv64 !sh4 !x32)_ZNK11flexbuffers9Reference7AsInt64Ev@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64el !riscv64 !sh4 !x32)_ZNK11flexbuffers9Reference7AsInt64Ev@Base 1.11.0+dfsg1
  (arch=!amd64 !arm64 !ia64 !mips64el !ppc64el !riscv64 !sh4 !x32)_ZNK11flexbuffers9Reference8AsDoubleEv@Base 1.11.0+dfsg1
  _ZNK11flexbuffers9Reference8AsUInt64Ev@Base 1.11.0+dfsg1
  _ZNK11flexbuffers9Reference8ToStringEbbRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
@@ -367,6 +373,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst|subst)_ZNSt6vectorIhSaIhEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPhS1_EE{size_t}RKh@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt6vectorIhSaIhEE15_M_range_insertIPKhEEvN9__gnu_cxx17__normal_iteratorIPhS1_EET_S9_St20forward_iterator_tag@Base 1.10.0+dfsg1
  (optional=templinst|subst)_ZNSt6vectorIhSaIhEE17_M_default_appendE{size_t}@Base 1.10.0+dfsg1
+ (optional=templinst)_ZNSt6vectorIhSaIhEE17_M_realloc_insertIJhEEEvN9__gnu_cxx17__normal_iteratorIPhS1_EEDpOT_@Base 1.11.0+dfsg1-1.2
  (optional=templinst)_ZNSt6vectorIjSaIjEE17_M_realloc_insertIJRKjEEEvN9__gnu_cxx17__normal_iteratorIPjS1_EEDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt7__cxx1110_List_baseINS_12basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE8_M_clearEv@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag@Base 1.10.0+dfsg1
