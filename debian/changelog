@@ -1,3 +1,13 @@
+flatbuffers (1.11.0+dfsg1-1.5) experimental; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Non-maintainer upload
+
+  [ Alexander Gerasiov ]
+  * d/control, d/rules: Add python3-flatbuffers.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 29 May 2020 13:10:30 +0200
+
 flatbuffers (1.11.0+dfsg1-1.4) unstable; urgency=medium
 
   * Non-maintainer upload.
