@@ -1,12 +1,18 @@
-flatbuffers (1.11.0+dfsg1-1.5) experimental; urgency=medium
+flatbuffers (1.11.0+dfsg1-2) unstable; urgency=medium
 
   [ Gianfranco Costamagna ]
-  * Non-maintainer upload
+  * Team upload
+
+  [ Vasyl Gello ]
+  * debian: Adjust symbols for libflatbuffers1/alpha
+  * debian: Add gbp.conf
+  * debian: fix Lintian warnings
+  * debian: fix FTBFS on hurd/i386
 
   [ Alexander Gerasiov ]
   * d/control, d/rules: Add python3-flatbuffers.
 
- -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 29 May 2020 13:10:30 +0200
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 01 Jul 2020 18:04:01 +0200
 
 flatbuffers (1.11.0+dfsg1-1.4) unstable; urgency=medium
 
