@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/pkg-info.mk
+
 # SOURCE_DATE_EPOCH set by dh
 export DEB_CPPFLAGS_MAINT_APPEND = -Wno-error=date-time
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-
-PYVERSION=$(shell dpkg-parsechangelog -S Version)
 
 %:
 	dh $@ --with pkgkde_symbolshelper,python3
@@ -17,7 +17,7 @@ override_dh_auto_build-arch:
 	dh_auto_build --arch
 
 	set -e; cd python && for pv in $(shell py3versions -vr); do \
-		VERSION=$(PYVERSION) python$$pv setup.py build; \
+		VERSION=$(DEB_VERSION) python$$pv setup.py build; \
 	done
 
 override_dh_auto_install-arch:
@@ -26,7 +26,7 @@ override_dh_auto_install-arch:
 	# Python3 install.
 	set -e; \
 	cd python && for pv in $(shell py3versions -vr); do \
-		python$$pv setup.py install \
+		VERSION=$(DEB_VERSION) python$$pv setup.py install \
 			--install-layout=deb --no-compile \
 			--root=$(CURDIR)/debian/python3-flatbuffers; \
 	done
