@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.11.0+dfsg1 amd64 arm64 armel armhf hppa i386 ia64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 x32
+# SymbolsHelper-Confirmed: 1.11.0+dfsg1-2 alpha arm64 armel armhf hppa i386 ia64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 x32
 libflatbuffers.so.1 libflatbuffers1 #MINVER#
 * Build-Depends-Package: libflatbuffers-dev
  _ZN10reflection18VerifySchemaBufferERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
@@ -25,7 +25,6 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers11ParserStateD1Ev@Base 1.10.0+dfsg1
  _ZN11flatbuffers11ParserStateD2Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorINS_6OffsetIvEEEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
- (optional=templinst|arch=!alpha)_ZN11flatbuffers11SymbolTableINS_10ServiceDefEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIaEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIdEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11PrintVectorIfEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
@@ -36,6 +35,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZN11flatbuffers11PrintVectorItEEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst|subst)_ZN11flatbuffers11PrintVectorI{int64_t}EEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
  (optional=templinst|subst)_ZN11flatbuffers11PrintVectorI{uint64_t}EEbRKNS_6VectorIT_EENS_4TypeEiRKNS_10IDLOptionsEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.10.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64)_ZN11flatbuffers11SymbolTableINS_10ServiceDefEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_10ServiceDefEED1Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_10ServiceDefEED2Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_4TypeEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.10.0+dfsg1
@@ -43,6 +43,9 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_7EnumDefEED1Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_7EnumDefEED2Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_7EnumValEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7EnumValEED1Ev@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7EnumValEED2Ev@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7RPCCallEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_7RPCCallEED1Ev@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers11SymbolTableINS_7RPCCallEED2Ev@Base 1.11.0+dfsg1
  (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flatbuffers11SymbolTableINS_9StructDefEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
@@ -100,6 +103,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers16GenerateTextFileERKNS_6ParserERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_@Base 1.10.0+dfsg1
  _ZN11flatbuffers16OutputIdentifierERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_10IDLOptionsEPS5_@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder10AddElementIhEEvtT_S2_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZN11flatbuffers17FlatBufferBuilder10AddElementIiEEvtT_S2_@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder10AddElementIjEEvtT_S2_@Base 1.10.0+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder10TrackFieldEtj@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder11PushElementIhEEjT_@Base 1.10.0+dfsg1
@@ -232,6 +236,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZN11flatbuffers6ParserC2ERKNS_10IDLOptionsE@Base 1.10.0+dfsg1
  _ZN11flatbuffers6ParserD1Ev@Base 1.10.0+dfsg1
  _ZN11flatbuffers6ParserD2Ev@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZN11flatbuffers6ToUTF8EjPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.11.0+dfsg1
  (subst)_ZN11flatbuffers6VerifyERKN10reflection6SchemaERKNS0_6ObjectEPKh{size_t}@Base 1.10.0+dfsg1
  _ZN11flatbuffers7EnumDef11DeserializeERNS_6ParserEPKN10reflection4EnumE@Base 1.11.0+dfsg1
  _ZN11flatbuffers7EnumVal11DeserializeERKNS_6ParserEPKN10reflection7EnumValE@Base 1.11.0+dfsg1
@@ -273,13 +278,13 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers14AppendToStringINS_16FixedTypedVectorEEEvRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEOT_b@Base 1.11.0+dfsg1
  (optional=templinst)_ZN11flexbuffers14AppendToStringINS_6VectorEEEvRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEOT_b@Base 1.11.0+dfsg1
  (optional=templinst|subst)_ZN11flexbuffers7Builder12CreateVectorE{size_t}{size_t}{size_t}bbPKNS0_5ValueE@Base 1.10.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers7Builder5AlignENS_8BitWidthE@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers7Builder6EndMapEm@Base 1.11.0+dfsg1
  _ZN11flexbuffers7Builder6FinishEv@Base 1.10.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZN11flexbuffers7Builder5AlignENS_8BitWidthE@Base 1.11.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZN11flexbuffers7Builder6EndMapEm@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers7Builder8WriteAnyERKNS0_5ValueEh@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers7BuilderD1Ev@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZN11flexbuffers7BuilderD2Ev@Base 1.11.0+dfsg1
  (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection4Enum18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZN11flexbuffers7Builder8WriteAnyERKNS0_5ValueEh@Base 1.11.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZN11flexbuffers7BuilderD1Ev@Base 1.11.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZN11flexbuffers7BuilderD2Ev@Base 1.11.0+dfsg1
  _ZNK10reflection4Enum6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  _ZNK10reflection4Type6VerifyERN11flatbuffers8VerifierE@Base 1.11.0+dfsg1
  (optional=templinst|arch=hppa m68k powerpc ppc64 s390x)_ZNK10reflection5Field18KeyCompareLessThanEPKS0_@Base 1.11.0+dfsg1
@@ -345,6 +350,13 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers9StructDefEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE4findERS7_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt3setIS5_St4lessIS5_ESaIS5_EES8_SaISt4pairIKS5_SA_EEEixEOS5_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEbSt4lessIS5_ESaISt4pairIKS5_bEEEixEOS5_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection4EnumEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection5FieldEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection6ObjectEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7EnumValEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7RPCCallEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7ServiceEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection8KeyValueEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt6vectorIN11flexbuffers7Builder5ValueESaIS2_EE12emplace_backIJS2_EEEvDpOT_@Base 1.10.0+dfsg1
  (optional=templinst|subst)_ZNSt6vectorIN11flexbuffers7Builder5ValueESaIS2_EE17_M_default_appendE{size_t}@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt6vectorIN11flexbuffers7Builder5ValueESaIS2_EE17_M_realloc_insertIJRKS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_@Base 1.10.0+dfsg1
@@ -374,7 +386,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst|subst)_ZNSt6vectorIhSaIhEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPhS1_EE{size_t}RKh@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt6vectorIhSaIhEE15_M_range_insertIPKhEEvN9__gnu_cxx17__normal_iteratorIPhS1_EET_S9_St20forward_iterator_tag@Base 1.10.0+dfsg1
  (optional=templinst|subst)_ZNSt6vectorIhSaIhEE17_M_default_appendE{size_t}@Base 1.10.0+dfsg1
- (optional=templinst|arch=!alpha !amd64)_ZNSt6vectorIhSaIhEE17_M_realloc_insertIJhEEEvN9__gnu_cxx17__normal_iteratorIPhS1_EEDpOT_@Base 1.11.0+dfsg1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !i386 !ia64 !sh4 !x32)_ZNSt6vectorIhSaIhEE17_M_realloc_insertIJhEEEvN9__gnu_cxx17__normal_iteratorIPhS1_EEDpOT_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt6vectorIjSaIjEE17_M_realloc_insertIJRKjEEEvN9__gnu_cxx17__normal_iteratorIPjS1_EEDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt7__cxx1110_List_baseINS_12basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE8_M_clearEv@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag@Base 1.10.0+dfsg1
@@ -383,6 +395,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeIN11flatbuffers6OffsetINS0_6StringEEES3_St9_IdentityIS3_ENS0_17FlatBufferBuilder19StringOffsetCompareESaIS3_EE16_M_insert_uniqueIRKS3_EESt4pairISt17_Rb_tree_iteratorIS3_EbEOT_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt8_Rb_treeIN11flatbuffers6OffsetINS0_6StringEEES3_St9_IdentityIS3_ENS0_17FlatBufferBuilder19StringOffsetCompareESaIS3_EE4findERKS3_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeIN11flatbuffers6OffsetINS0_6StringEEES3_St9_IdentityIS3_ENS0_17FlatBufferBuilder19StringOffsetCompareESaIS3_EE8_M_eraseEPSt13_Rb_tree_nodeIS3_E@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_St9_IdentityIS5_ESt4lessIS5_ESaIS5_EE16_M_insert_uniqueIRKS5_EESt4pairISt17_Rb_tree_iteratorIS5_EbEOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_St9_IdentityIS5_ESt4lessIS5_ESaIS5_EE8_M_eraseEPSt13_Rb_tree_nodeIS5_E@Base 1.10.0+dfsg1
@@ -397,6 +410,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS7_EESM_IJEEEEESt17_Rb_tree_iteratorISB_ESt23_Rb_tree_const_iteratorISB_EDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 1.10.0+dfsg1
  (optional=templinst|arch=!alpha !armel !armhf !i386 !mipsel !powerpc !ppc64 !s390x)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorISB_ERS7_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE4findERS7_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_M_eraseEPSt13_Rb_tree_nodeISB_E@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumDefEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS7_EESM_IJEEEEESt17_Rb_tree_iteratorISB_ESt23_Rb_tree_const_iteratorISB_EDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumDefEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 1.10.0+dfsg1
@@ -407,6 +421,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS7_EESM_IJEEEEESt17_Rb_tree_iteratorISB_ESt23_Rb_tree_const_iteratorISB_EDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 1.10.0+dfsg1
  (optional=templinst|arch=!alpha !armel !armhf !i386 !mipsel !powerpc !ppc64 !s390x)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorISB_ERS7_@Base 1.10.0+dfsg1
+ (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE4findERS7_@Base 1.11.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_M_eraseEPSt13_Rb_tree_nodeISB_E@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7RPCCallEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE22_M_emplace_hint_uniqueIJRKSt21piecewise_construct_tSt5tupleIJRS7_EESM_IJEEEEESt17_Rb_tree_iteratorISB_ESt23_Rb_tree_const_iteratorISB_EDpOT_@Base 1.10.0+dfsg1
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7RPCCallEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 1.10.0+dfsg1
@@ -515,18 +530,3 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  _ZZN11flexbuffers3Map8EmptyMapEvE9empty_map@Base 1.10.0+dfsg1
  (optional=templinst|arch=!alpha amd64 ia64 sh4 x32)_ZZN11flexbuffers6String11EmptyStringEvE12empty_string@Base 1.11.0+dfsg1
  (arch=!hppa !m68k !mips64el !mipsel !ppc64 !ppc64el !riscv64 !s390x|subst)_ZZN11flexbuffers7Builder6EndMapE{size_t}ENKUlRKZNS0_6EndMapE{size_t}E8TwoValueS3_E_clES3_S3_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7EnumValEED1Ev@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7EnumValEED2Ev@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZN11flatbuffers11SymbolTableINS_7RPCCallEE3AddERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPS1_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZN11flatbuffers17FlatBufferBuilder10AddElementIiEEvtT_S2_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZN11flatbuffers6ToUTF8EjPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection4EnumEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection5FieldEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection6ObjectEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7EnumValEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7RPCCallEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection7ServiceEEESaIS4_EE17_M_realloc_insertIJRKS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt6vectorIN11flatbuffers6OffsetIN10reflection8KeyValueEEESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt8_Rb_treeIN11flatbuffers6OffsetINS0_6StringEEES3_St9_IdentityIS3_ENS0_17FlatBufferBuilder19StringOffsetCompareESaIS3_EE4findERKS3_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers5ValueEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE4findERS7_@Base 1.11.0+dfsg1
- (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN11flatbuffers7EnumValEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE4findERS7_@Base 1.11.0+dfsg1
