@@ -22,6 +22,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.*;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.lang.Integer;
 
 /// @file
 /// @addtogroup flatbuffers_java_api
@@ -33,20 +36,21 @@ import java.util.Arrays;
  */
 public class FlatBufferBuilder {
     /// @cond FLATBUFFERS_INTERNAL
-    ByteBuffer bb;                  // Where we construct the FlatBuffer.
-    int space;                      // Remaining space in the ByteBuffer.
-    int minalign = 1;               // Minimum alignment encountered so far.
-    int[] vtable = null;            // The vtable for the current table.
-    int vtable_in_use = 0;          // The amount of fields we're actually using.
-    boolean nested = false;         // Whether we are currently serializing a table.
-    boolean finished = false;       // Whether the buffer is finished.
-    int object_start;               // Starting offset of the current struct/table.
-    int[] vtables = new int[16];    // List of offsets of all vtables.
-    int num_vtables = 0;            // Number of entries in `vtables` in use.
-    int vector_num_elems = 0;       // For the current vector being built.
-    boolean force_defaults = false; // False omits default values from the serialized data.
-    ByteBufferFactory bb_factory;   // Factory for allocating the internal buffer
-    final Utf8 utf8;                // UTF-8 encoder to use
+    ByteBuffer bb;                    // Where we construct the FlatBuffer.
+    int space;                        // Remaining space in the ByteBuffer.
+    int minalign = 1;                 // Minimum alignment encountered so far.
+    int[] vtable = null;              // The vtable for the current table.
+    int vtable_in_use = 0;            // The amount of fields we're actually using.
+    boolean nested = false;           // Whether we are currently serializing a table.
+    boolean finished = false;         // Whether the buffer is finished.
+    int object_start;                 // Starting offset of the current struct/table.
+    int[] vtables = new int[16];      // List of offsets of all vtables.
+    int num_vtables = 0;              // Number of entries in `vtables` in use.
+    int vector_num_elems = 0;         // For the current vector being built.
+    boolean force_defaults = false;   // False omits default values from the serialized data.
+    ByteBufferFactory bb_factory;     // Factory for allocating the internal buffer
+    final Utf8 utf8;                  // UTF-8 encoder to use
+    Map<String, Integer> string_pool; // map used to cache shared strings.
     /// @endcond
 
     /**
@@ -72,7 +76,6 @@ public class FlatBufferBuilder {
         if (initial_size <= 0) {
           initial_size = 1;
         }
-        space = initial_size;
         this.bb_factory = bb_factory;
         if (existing_bb != null) {
           bb = existing_bb;
@@ -82,6 +85,7 @@ public class FlatBufferBuilder {
           bb = bb_factory.newByteBuffer(initial_size);
         }
         this.utf8 = utf8;
+        space = bb.capacity();
     }
 
    /**
@@ -147,6 +151,9 @@ public class FlatBufferBuilder {
         object_start = 0;
         num_vtables = 0;
         vector_num_elems = 0;
+        if (string_pool != null) {
+            string_pool.clear();
+        }
         return this;
     }
 
@@ -199,6 +206,17 @@ public class FlatBufferBuilder {
         }
     }
 
+   /**
+   * Helper function to test if a field is present in the table
+   *
+   * @param table Flatbuffer table
+   * @param offset virtual table offset
+   * @return true if the filed is present
+   */
+   public static boolean isFieldPresent(Table table, int offset) {
+     return table.__offset(offset) != 0;
+   }
+
     /**
      * Reset the FlatBufferBuilder by purging all data that it holds.
      */
@@ -213,6 +231,9 @@ public class FlatBufferBuilder {
         object_start = 0;
         num_vtables = 0;
         vector_num_elems = 0;
+        if (string_pool != null) {
+            string_pool.clear();
+        }
     }
 
     /**
@@ -231,6 +252,7 @@ public class FlatBufferBuilder {
         int new_buf_size = old_buf_size == 0 ? 1 : old_buf_size << 1;
         bb.position(0);
         ByteBuffer nbb = bb_factory.newByteBuffer(new_buf_size);
+        new_buf_size = nbb.clear().capacity(); // Ensure the returned buffer is treated as empty
         nbb.position(new_buf_size - old_buf_size);
         nbb.put(bb);
         return nbb;
@@ -515,6 +537,37 @@ public class FlatBufferBuilder {
         return createVectorOfTables(offsets);
     }
 
+    /**
+    * Encode the String `s` in the buffer using UTF-8. If a String with
+    * this exact contents has already been serialized using this method,
+    * instead simply returns the offset of the existing String.
+    *
+    * Usage of the method will incur into additional allocations,
+    * so it is advisable to use it only when it is known upfront that
+    * your message will have several repeated strings.
+    *
+    * @param s The String to encode.
+    * @return The offset in the buffer where the encoded String starts.
+    */
+    public int createSharedString(String s) {
+
+        if (string_pool == null) {
+            string_pool = new HashMap<>();
+            int offset = createString(s);
+            string_pool.put(s, offset);
+            return offset;
+
+        }
+
+        Integer offset = string_pool.get(s);
+
+        if(offset == null) {
+            offset = createString(s);
+            string_pool.put(s, offset);
+        }
+        return offset;
+    }
+
    /**
     * Encode the string `s` in the buffer using UTF-8.  If {@code s} is
     * already a {@link CharBuffer}, this method is allocation free.
@@ -557,6 +610,38 @@ public class FlatBufferBuilder {
         startVector(1, length, 1);
         bb.position(space -= length);
         bb.put(arr);
+        return endVector();
+    }
+
+    /**
+     * Create a byte array in the buffer.
+     *
+     * @param arr a source array with data.
+     * @param offset the offset in the source array to start copying from.
+     * @param length the number of bytes to copy from the source array.
+     * @return The offset in the buffer where the encoded array starts.
+     */
+    public int createByteVector(byte[] arr, int offset, int length) {
+        startVector(1, length, 1);
+        bb.position(space -= length);
+        bb.put(arr, offset, length);
+        return endVector();
+    }
+
+    /**
+     * Create a byte array in the buffer.
+     *
+     * The source {@link ByteBuffer} position is advanced by {@link ByteBuffer#remaining()} places
+     * after this call.
+     *
+     * @param byteBuffer A source {@link ByteBuffer} with data.
+     * @return The offset in the buffer where the encoded array starts.
+     */
+    public int createByteVector(ByteBuffer byteBuffer) {
+        int length = byteBuffer.remaining();
+        startVector(1, length, 1);
+        bb.position(space -= length);
+        bb.put(byteBuffer);
         return endVector();
     }
 
@@ -632,7 +717,7 @@ public class FlatBufferBuilder {
     *
     * @param numfields The number of fields found in this object.
     */
-    public void startObject(int numfields) {
+    public void startTable(int numfields) {
         notNested();
         if (vtable == null || vtable.length < numfields) vtable = new int[numfields];
         vtable_in_use = numfields;
@@ -757,11 +842,11 @@ public class FlatBufferBuilder {
     * Finish off writing the object that is under construction.
     *
     * @return The offset to the object inside {@link #dataBuffer()}.
-    * @see #startObject(int)
+    * @see #startTable(int)
     */
-    public int endObject() {
+    public int endTable() {
         if (vtable == null || !nested)
-            throw new AssertionError("FlatBuffers: endObject called without startObject");
+            throw new AssertionError("FlatBuffers: endTable called without startTable");
         addInt(0);
         int vtableloc = offset();
         // Write out the current vtable.
