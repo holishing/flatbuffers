@@ -1,3 +1,13 @@
+flatbuffers (1.12.0~git20200706.969d0f7+dfsg1-1) UNRELEASED; urgency=medium
+
+  * debian: adjust symbols from buildlogs
+  * New upstream version 1.12.0~git20200706.969d0f7+dfsg1
+  * debian: Suppress some lintian warnings
+  * debian: Remove obsoleted patch
+  * debian: Adjust symbols for amd64
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Tue, 07 Jul 2020 12:56:10 +0000
+
 flatbuffers (1.11.0+dfsg1-3) unstable; urgency=medium
 
   * Team upload
