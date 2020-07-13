@@ -1,3 +1,11 @@
+flatbuffers (1.12.1+git20200711.33e2d80+dfsg1-1) unstable; urgency=medium
+
+  * debian: do not override missing gpg signature lintian warning
+  * New upstream version 1.12.1+git20200711.33e2d80+dfsg1
+  * debian: Simplify symbols for amd64
+
+ -- Vasyl Gello <vasek.gello@gmail.com>  Mon, 13 Jul 2020 07:45:30 +0000
+
 flatbuffers (1.12.0~git20200706.969d0f7+dfsg1-1) UNRELEASED; urgency=medium
 
   * debian: adjust symbols from buildlogs
