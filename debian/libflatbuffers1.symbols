@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.12.1+git20200711.33e2d80+dfsg1 amd64
+# SymbolsHelper-Confirmed: 1.12.1~git20200711.33e2d80+dfsg1 amd64
 libflatbuffers.so.1 libflatbuffers1 #MINVER#
 * Build-Depends-Package: libflatbuffers-dev
  (optional=templinst)_ZN10reflection11CreateFieldERN11flatbuffers17FlatBufferBuilderENS0_6OffsetINS0_6StringEEENS3_INS_4TypeEEEttldbbbNS3_INS0_6VectorINS3_INS_8KeyValueEEEEEEENS3_INS8_IS5_EEEE@Base 1.12.0~git20200706.969d0f7+dfsg1
@@ -164,7 +164,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (subst)_ZN11flatbuffers17FlatBufferBuilder12CreateStringEPKc{size_t}@Base 1.10.0+dfsg1
  (subst)_ZN11flatbuffers17FlatBufferBuilder18CreateSharedStringEPKc{size_t}@Base 1.10.0+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder21CreateVectorOfStringsERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EE@Base 1.10.0+dfsg1
- (optional=templinst|subst)_ZN11flatbuffers17FlatBufferBuilder5AlignE{size_t}@Base 1.12.1+git20200711.33e2d80+dfsg1
+ (optional=templinst|subst)_ZN11flatbuffers17FlatBufferBuilder5AlignE{size_t}@Base 1.12.1~git20200711.33e2d80+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder6FinishEjPKcb@Base 1.10.0+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder7ReferToEj@Base 1.10.0+dfsg1
  _ZN11flatbuffers17FlatBufferBuilder8EndTableEj@Base 1.10.0+dfsg1
@@ -174,7 +174,7 @@ libflatbuffers.so.1 libflatbuffers1 #MINVER#
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder8RequiredIN10reflection6ObjectEEEvNS_6OffsetIT_EEt@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder8RequiredIN10reflection6SchemaEEEvNS_6OffsetIT_EEt@Base 1.10.0+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder8RequiredIN10reflection7RPCCallEEEvNS_6OffsetIT_EEt@Base 1.10.0+dfsg1
- (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder9EndVectorEm@Base 1.12.1+git20200711.33e2d80+dfsg1
+ (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder9EndVectorEm@Base 1.12.1~git20200711.33e2d80+dfsg1
  (optional=templinst)_ZN11flatbuffers17FlatBufferBuilder9EndVectorE{size_t}@Base 1.12.0~git20200706.969d0f7+dfsg1
  _ZN11flatbuffers17FlatBufferBuilderD1Ev@Base 1.12.0~git20200706.969d0f7+dfsg1
  _ZN11flatbuffers17FlatBufferBuilderD2Ev@Base 1.12.0~git20200706.969d0f7+dfsg1
