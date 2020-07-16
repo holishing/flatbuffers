@@ -1,0 +1,87 @@
+From 328db8cae8e4069f58d9f3b415660158c7b148cf Mon Sep 17 00:00:00 2001
+From: Vasyl Gello <vasek.gello@gmail.com>
+Date: Thu, 16 Jul 2020 11:01:55 +0300
+Subject: [PATCH] tests: Check for both quiet and signaling NaN on mipsel/hppa
+Forwarded: https://github.com/google/flatbuffers/pull/6029
+
+MIPSEL, MIPS64EL and HP-PA architectures have quiet and
+signaling NaNs swapped. The test assumes correct values
+for i386 / amd64 but obviously fails on these architectures.
+It is documented in many places, like
+
+https://software.llnl.gov/yorick-doc/stdlib/ieee.html :
+
+Warning-- apparently there is no universal standard for what
+  constitutes signalling versus quiet NaN
+  on MIPS and HPPA architectures, qNaN and sNaN are reversed
+
+https://gcc.gnu.org/onlinedocs/gcc/MIPS-Options.html :
+
+  -mnan=2008
+  -mnan=legacy
+
+  These options control the encoding of the special
+  not-a-number (NaN) IEEE 754 floating-point data.
+
+  The -mnan=legacy option selects the legacy encoding.
+  In this case quiet NaNs (qNaNs) are denoted by the first
+  bit of their trailing significand field being 0, whereas
+  signaling NaNs (sNaNs) are denoted by the first bit of
+  their trailing significand field being 1.
+
+  The -mnan=2008 option selects the IEEE 754-2008 encoding.
+  In this case qNaNs are denoted by the first bit of their
+  trailing significand field being 1, whereas sNaNs are
+  denoted by the first bit of their trailing significand
+  field being 0.
+
+  The default is -mnan=legacy unless GCC has been configured
+  with --with-nan=2008.
+
+The behavior mentioned above causes FTBFS in Debian starting
+with 1.12.0:
+
+https://buildd.debian.org/status/fetch.php?pkg=flatbuffers&arch=mips64el&ver=1.12.1%7Egit20200711.33e2d80%2Bdfsg1-0.1&stamp=1594830681&raw=0
+https://buildd.debian.org/status/fetch.php?pkg=flatbuffers&arch=mipsel&ver=1.12.1%7Egit20200711.33e2d80%2Bdfsg1-0.1&stamp=1594832647&raw=0
+https://buildd.debian.org/status/fetch.php?pkg=flatbuffers&arch=hppa&ver=1.12.1%7Egit20200711.33e2d80%2Bdfsg1-0.1&stamp=1594830726&raw=0
+
+For HP-PA (PA-RISC) there is no way to override the reversal,
+and for MIPSEL/MIPS64EL there is no macro defining the '-mnan'
+choice, so both variants were added with OR boolean operator.
+
+Signed-off-by: Vasyl Gello <vasek.gello@gmail.com>
+---
+ tests/test.cpp | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/tests/test.cpp b/tests/test.cpp
+index b7ae7672..191ffa1a 100644
+--- a/tests/test.cpp
++++ b/tests/test.cpp
+@@ -678,12 +678,23 @@ template<typename T, typename U, U qnan_base> bool is_quiet_nan_impl(T v) {
+   std::memcpy(&b, &v, sizeof(T));
+   return ((b & qnan_base) == qnan_base);
+ }
++#if defined(__mips__) || defined(__hppa__)
++static bool is_quiet_nan(float v) {
++  return is_quiet_nan_impl<float, uint32_t, 0x7FC00000u>(v) ||
++         is_quiet_nan_impl<float, uint32_t, 0x7FBFFFFFu>(v);
++}
++static bool is_quiet_nan(double v) {
++  return is_quiet_nan_impl<double, uint64_t, 0x7FF8000000000000ul>(v) ||
++         is_quiet_nan_impl<double, uint64_t, 0x7FF7FFFFFFFFFFFFu>(v);
++}
++#else
+ static bool is_quiet_nan(float v) {
+   return is_quiet_nan_impl<float, uint32_t, 0x7FC00000u>(v);
+ }
+ static bool is_quiet_nan(double v) {
+   return is_quiet_nan_impl<double, uint64_t, 0x7FF8000000000000ul>(v);
+ }
++#endif
+ 
+ void TestMonsterExtraFloats() {
+   TEST_EQ(is_quiet_nan(1.0), false);
+-- 
+2.17.1
+
